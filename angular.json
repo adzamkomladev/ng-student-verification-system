@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-student-verification-system"
+    }
+  },
+  "defaultProject": "ng-student-verification-system",
+  "cli": {
+    "analytics": "65c31406-54b3-4ce6-b186-cc06d74a8945"
+  }
 }
