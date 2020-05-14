@@ -1,41 +1,44 @@
 <div class="form-card">
-  <form>
+  <form #form="ngForm">
     <fieldset>
       <legend>Student information</legend>
-      <div class="form-control">
+      <div class="form-group">
         <label for="first-name">First name</label>
         <input
           id="first-name"
           type="text"
-          placeholder="First name"
+          placeholder="Students first name"
           name="firstName"
         />
       </div>
-      <div class="form-control">
+      <div class="form-group">
         <label for="last-name">Last name</label>
         <input
           id="last-name"
           type="text"
-          placeholder="Last name"
+          placeholder="Students last name"
           name="lastName"
         />
       </div>
-      <div class="form-control">
+      <div class="form-group">
         <label for="index-no">Index number</label>
         <input
           id="index-no"
           type="text"
-          placeholder="Index number"
+          placeholder="Students index number"
           name="indexNumber"
         />
       </div>
-      <div class="form-control">
-        <label for="image">Image</label>
-        <input id="image" type="file" accept="images/*" />
+      <div class="form-group-file">
+        <label for="image">
+          <input id="image" type="file" accept="images/*" />Select image</label
+        >
       </div>
-      <div class="form-control">
-        <button>Generate QR code</button>
+      <div class="form-group buttons">
+        <button type="submit">Generate QR code</button>
+        <button type="reset">Cancel</button>
       </div>
     </fieldset>
   </form>
 </div>
+<div></div>
