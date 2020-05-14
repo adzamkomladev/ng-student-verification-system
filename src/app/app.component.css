@@ -40,6 +40,7 @@ legend {
 
 .form-group > input[type="text"] {
   font-size: 14px;
+  background: none;
   padding: 10px 6px;
   border-radius: 4px;
   border: 1px solid #636060;
@@ -54,26 +55,14 @@ legend {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.form-group > input[type="file"] {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
+.form-group > input[type="text"].ng-touched.ng-valid:not(:focus) {
+  border: 1px solid #189100;
+  border-left: 6px solid #189100;
 }
 
-.form-group > input[type="file"] + label {
-  font-size: 1.25em;
-  font-weight: 700;
-  color: white;
-  background-color: black;
-  display: inline-block;
-}
-
-.form-group > input[type="file"]:focus + label,
-.form-group > input[type="file"] + label:hover {
-  background-color: red;
+.form-group > input[type="text"].ng-touched.ng-invalid:not(:focus) {
+  border: 1px solid #7c0101;
+  border-left: 6px solid #7c0101;
 }
 
 .form-group.buttons {
@@ -102,7 +91,15 @@ legend {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.form-group.buttons > button:disabled {
+  background-color: #0e0d0dd7;
+}
+
 .form-group-file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   margin: 36px 0;
 }
 
