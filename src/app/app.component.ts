@@ -13,6 +13,7 @@ import { Student } from './student.model';
 export class AppComponent {
   image: File;
   previewImage: string;
+  qrData: string;
 
   constructor(private fileUploadService: FileUploadService) {
     this.previewImage = '/assets/img/nsvs1.jpg';
@@ -38,6 +39,8 @@ export class AppComponent {
       imageUrl,
     };
 
-    console.log({ student });
+    this.qrData = JSON.stringify(student);
+
+    form.resetForm();
   }
 }

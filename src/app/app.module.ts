@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
+import { QRCodeModule } from 'angularx-qrcode';
+
 import { AppComponent } from './app.component';
 
 import { environment } from 'src/environments/environment';
@@ -15,6 +17,7 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
+    QRCodeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
