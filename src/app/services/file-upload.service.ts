@@ -19,11 +19,4 @@ export class FileUploadService {
       console.error({ error });
     }
   }
-
-  async removeFile(fileDownloadUrl: string): Promise<boolean> {
-    return await this.afStorage.storage
-      .refFromURL(fileDownloadUrl)
-      .delete()
-      .then((_) => true);
-  }
 }

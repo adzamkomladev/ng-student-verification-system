@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { FileUploadService } from './file-upload.service';
+import { FileUploadService } from './services/file-upload.service';
+import { AESEncryptionService } from './services/aes-encryption.service';
 
 import { Student } from './student.model';
 
@@ -15,7 +16,10 @@ export class AppComponent {
   previewImage: string;
   qrData: string;
 
-  constructor(private fileUploadService: FileUploadService) {
+  constructor(
+    private fileUploadService: FileUploadService,
+    private AESEncryptionService: AESEncryptionService
+  ) {
     this.previewImage = '/assets/img/nsvs1.jpg';
   }
 
@@ -39,8 +43,12 @@ export class AppComponent {
       imageUrl,
     };
 
-    this.qrData = JSON.stringify(student);
+    const studentData = JSON.stringify(student);
+
+    this.qrData = this.AESEncryptionService.encrypt(studentData);
 
     form.resetForm();
+
+    console.log(this.qrData);
   }
 }
