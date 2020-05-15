@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { FileUploadService } from './file-upload.service';
+import { Student } from './student.model';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ export class AppComponent {
   image: File;
   previewImage: string;
 
-  constructor() {
+  constructor(private fileUploadService: FileUploadService) {
     this.previewImage = '/assets/img/nsvs1.jpg';
   }
 
@@ -24,5 +26,16 @@ export class AppComponent {
     this.image = file;
   }
 
-  onSubmit(form: NgForm): void {}
+  async onSubmit(form: NgForm) {
+    const imageUrl = await this.fileUploadService.uploadFile(this.image);
+
+    const student: Student = {
+      firstName: form.value.firstName,
+      lastName: form.value.lastName,
+      indexNumber: form.value.indexNumber,
+      imageUrl,
+    };
+
+    console.log({ student });
+  }
 }
