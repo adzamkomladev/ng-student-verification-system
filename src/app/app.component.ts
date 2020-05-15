@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { FileUploadService } from './file-upload.service';
+
 import { Student } from './student.model';
 
 @Component({
